@@ -1,4 +1,6 @@
-package org.solution.kotenko.utils;
+package org.solution.utils;
+
+import org.solution.kotenko.utils.Utils;
 
 import static org.junit.Assert.*;
 

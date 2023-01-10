@@ -14,11 +14,11 @@ public class Utils {
      * @param num takes string with num sequence
      * @return reversed sequence
      */
-    protected static String reverseSequence(String num) {
+    public static String reverseSequence(String num) {
         int[] convert = convert(num);
         StringBuilder result = new StringBuilder();
         for (int i = convert.length - 1; i >= 0; i--) {
-            result.append(convert[i]).append(", ");
+            result.append(convert[i]).append(",");
         }
         return result.substring(0, result.length() - 2);
     }
@@ -29,7 +29,7 @@ public class Utils {
      * @param num takes string with num sequence
      * @return true if it's fibonacci sequence
      */
-    protected static boolean isFibonacci(String num) {
+    public static boolean isFibonacci(String num) {
         int[] actualSequence = convert(num);
         if (actualSequence.length < 3) {
             return false;
@@ -56,6 +56,6 @@ public class Utils {
      * @return int array
      */
     private static int[] convert(String num) {
-        return Arrays.stream(num.split(", ")).mapToInt(Integer::parseInt).toArray();
+        return Arrays.stream(num.split(",")).mapToInt(Integer::parseInt).toArray();
     }
 }
