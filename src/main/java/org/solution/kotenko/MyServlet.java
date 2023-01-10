@@ -48,6 +48,10 @@ public class MyServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String num = req.getParameter("num");
-        DataStorage.getInstance().setFibonacci(new Fibonacci(num));
+        if(Utils.isFibonacci(num)){
+            DataStorage.getInstance().setFibonacci(new Fibonacci(Utils.reverseSequence(num)));
+        } else {
+            DataStorage.getInstance().setFibonacci(new Fibonacci(num));
+        }
     }
 }
